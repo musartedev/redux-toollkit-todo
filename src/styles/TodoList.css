@@ -1,0 +1,11 @@
+.TodoList {
+  background-color: var(--light-color);
+  width: 80%;
+  max-width: 400px;
+  padding: var(--section-padding);
+}
+
+.TodoList ul {
+  list-style: none;
+  padding: 0;
+}

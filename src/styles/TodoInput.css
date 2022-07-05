@@ -1,0 +1,21 @@
+.TodoInput {
+  background-color: var(--light-color);
+  padding: var(--section-padding);
+  width: 80%;
+  max-width: 400px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.TodoInput-label {
+  margin: 0.5rem 0;
+  color: var(--accent-color);
+}
+
+.TodoInput-input {
+  padding: 0.5rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  margin: 0.5rem 0;
+}

@@ -1,0 +1,23 @@
+.TodoItem {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.TodoItem:hover {
+  opacity: 0.8;
+}
+
+.TodoItem::before {
+  content: '❏';
+  margin-right: 0.5rem;
+  color: var(--accent-color);
+}
+
+.TodoItem--done {
+  text-decoration: line-through;
+}
+
+.TodoItem--done::before {
+  content: '✔︎';
+  margin-right: 0.5rem;
+}
