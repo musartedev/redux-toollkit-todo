@@ -1,11 +1,21 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTask } from '../slices/taskSlice';
 import '../styles/TodoInput.css';
 
 export const TodoInput = () => {
+  const dispatch = useDispatch();
   const [text, setText] = useState('');
 
   const handleInputChange = (e) => {
     setText(e.target.value);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      dispatch(addTask({ text }));
+      setText('');
+    }
   };
 
   return (
@@ -16,6 +26,7 @@ export const TodoInput = () => {
         value={text}
         onChange={handleInputChange}
         placeholder='Escribe y presiona enter'
+        onKeyDown={handleKeyDown}
       />
     </section>
   );

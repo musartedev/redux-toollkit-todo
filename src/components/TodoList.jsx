@@ -1,15 +1,21 @@
+import { useSelector } from 'react-redux';
 import { TodoItem } from './TodoItem';
 import '../styles/TodoList.css';
 
 export const TodoList = () => {
-  const mockArray = Array(3).fill({ id: 1, text: 'Item', done: false });
+  const taskList = useSelector((state) => state.tasks);
+
   return (
     <section className='TodoList'>
-      <ul>
-        {mockArray.map(({ id, text, done }) => (
-          <TodoItem key={id} text={text} done={done} />
-        ))}
-      </ul>
+      {taskList.length > 0 ? (
+        <ul>
+          {taskList.map(({ id, text, done }) => (
+            <TodoItem key={id} id={id} text={text} done={done} />
+          ))}
+        </ul>
+      ) : (
+        <p>Empieza a añadir tareas ✨ </p>
+      )}
     </section>
   );
 };
